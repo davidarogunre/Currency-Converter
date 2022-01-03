@@ -16,9 +16,15 @@ class CurrencyConverter():
         curr_str1 = fromcurrency.get()
         curr_str2 = to_currency.get()
         if curr_str1 == 'EUR':
-            amount = round(float(self.rates[curr_str2]), 2)
-            print(amount)
+            amount = float(self.rates[curr_str2])
             amount = float(amount) * float(fromcurrvalue)
+            amount = round(amount,2)
+            tocurrvalue.delete(0,END)
+            tocurrvalue.insert(0,amount)
+        elif curr_str2 == "EUR":
+            amount = float(self.rates[curr_str1])
+            amount = float(fromcurrvalue)/float(amount)
+            amount = round(amount,2)
             tocurrvalue.delete(0,END)
             tocurrvalue.insert(0,amount)
         else:
