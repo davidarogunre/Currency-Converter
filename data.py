@@ -1,1 +1,0 @@
-dollar = {'naira':1000}
